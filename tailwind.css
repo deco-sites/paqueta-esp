@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+
+  /* Allow changing font family via CMS */
+  html {
+    font-family: var(--font-family);
+  }
+
+  mark {
+    @apply bg-accent text-accent-content;
+  }
+
+  /** Remove default styles from input[type=number] */
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Disable scroll once drawer/modal is openned */
+  body:has(.drawer-toggle:checked),
+  body:has(.modal-toggle:checked) {
+    overflow: hidden;
+    height: 100vh;
+  }
+}
+
+@layer components {
+  .features {
+    @apply flex items-center justify-center gap-6 flex-wrap;
+    @apply relative max-w-[1280px] mx-auto;
+  }
+
+  .feature-card {
+    @apply w-[380px] max-w-[380px] lg:h-[380px] bg-[#F4F4F4] rounded-3xl;
+    @apply border-l border-transparent duration-200 whitespace-pre-line text-center;
+    @apply flex flex-col items-center justify-start gap-8 py-10 px-8 lg:px-12;
+  }
+
+  .menu-hover-desktop:hover ul{
+    display: flex;
+  }
+  .menu-divide::after{
+    content: "";
+    width: 1px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #000;
+    opacity: 12%;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scroll-menu{
+    scrollbar-width: unset;
+  }
+  .scroll-menu::-webkit-scrollbar {
+    width: 4px;
+    display: block !important;
+  }
+  .scroll-menu::-webkit-scrollbar-thumb {
+    background-color: #E30613;
+    border-radius: 20px;
+  }
+  .scrollbar-none::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+  .border-right:last-child .child{
+    padding-right: 1rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.12);
+  }
+  .hover-bag:hover svg{
+    color: #fff;
+  }
+  .bottomUnset{
+    bottom: unset;
+  }
+  .containerSection section{
+    width: 100%;
+    height: 100%;
+  }
+  .paddingLeftUnset p{
+    padding-left: 0 !important;
+  }
+  .uxWritingHref a{
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+  #connectlyai_widget_container{
+    z-index: 10 !important;
+  }
+}
+@keyframes sliding {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-50%);
+  }
+}
+.animate-slide{
+  animation: sliding 15s linear infinite;
+}
+
+.animate-slide:hover{
+  animation-play-state: paused;
+}
+
+.group:disabled .group-disabled\:animate-progress {
+  animation: progress-frame ease normal
+}
+
+.grid-cols-auto-1{
+  grid-template-columns: auto 1fr;
+}
+
+@keyframes progress-frame {
+  0% {
+    --dot-progress: 0%
+  }
+
+  to {
+    --dot-progress: 100%
+  }
+}

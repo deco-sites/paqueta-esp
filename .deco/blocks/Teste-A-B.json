@@ -1,0 +1,1 @@
+{"variants":[{"rule":{"__resolveType":"Teste-A-B-GTM"},"value":{"__resolveType":"GTM-Defer"}},{"rule":{"__resolveType":"website/matchers/always.ts"},"value":{"trackingIds":["GTM-5T78J2QR"],"__resolveType":"website/sections/Analytics/Analytics.tsx","googleAnalyticsIds":[]}}],"__resolveType":"website/flags/multivariate/section.ts"}
