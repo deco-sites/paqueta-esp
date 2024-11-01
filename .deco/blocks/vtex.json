@@ -11,10 +11,10 @@
     "__resolveType": "website/loaders/secret.ts"
   },
   "platform": "vtex",
-  "publicUrl": "https://secure.paquetaesp.com.br/",
   "salesChannel": "1",
   "__resolveType": "decohub/apps/vtex.ts",
   "defaultSegment": {
     "channelPrivacy": "public"
-  }
+  },
+  "publicUrl": "https://www.paquetaesportes.com.br"
 }
